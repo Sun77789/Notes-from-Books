@@ -1,0 +1,17 @@
+Note that for displaying data, JSON.stringify() often works better than the canonical conversion to string:
+	> console.log(JSON.stringify({ first: 'John', last: 'Doe' }))
+		{"first":"John","last":"Doe"}
+	> console.log(JSON.stringify([ 'a', 'b', 'c' ]))
+	    ["a","b","c"]
+
+Naturally, you have to be aware of the limitations of JSON.stringify() — it doesn’t always show everything  such as functions and more.
+
+Pitfalls:
+1. Not all conversions are invertible.
+	> String(false)
+	'false'
+	> Boolean('false')
+	true
+For undefined and null, we face similar problems.
+
+2.
